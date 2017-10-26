@@ -7,13 +7,16 @@ from lis3mdl import LIS3MDL
 from lps25h import LPS25H
 
 imu = LSM6DS33()
-imu.enable()
+#imu.enable()
+imu.enableLSM()
 
 magnet = LIS3MDL()
-magnet.enable()
+#magnet.enable()
+magnet.enableLIS()
 
 baro = LPS25H()
-baro.enable()
+#baro.enable()
+baro.enableLPS()
 
 while True:
     print "Gyro:", imu.getGyroscopeRaw()
@@ -22,7 +25,7 @@ while True:
     print "hPa:", baro.getBarometerMillibars()
     print "Altitude:", baro.getAltitude()
     sleep(0.2)
-    print "Gyro Temperature:", imu.getTemperatureCelsius()
-    print "Magnet Temperature:", magnet.getTemperatureCelsius()
-    print "Baro Temperature:", baro.getTemperatureCelsius()
+#    print "Gyro Temperature:", imu.getTemperatureCelsius()
+#    print "Magnet Temperature:", magnet.getTemperatureCelsius()
+#    print "Baro Temperature:", baro.getTemperatureCelsius()
     sleep(0.1)
